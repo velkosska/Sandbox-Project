@@ -11,6 +11,10 @@ add_executable(sandbox
     src/isolation.c
     src/limits.c
     src/utils.c
+    src/threading.c
+    src/server.c
 )
+
+target_link_libraries(sandbox pthread)
 add_executable(test_utils tests/test_utils.c src/utils.c)
 add_executable(test_limits tests/test_limits.c src/limits.c src/utils.c)
